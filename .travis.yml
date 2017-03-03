@@ -3,7 +3,7 @@ go: '1.8'
 branches:
   only:
     - "/^v[0-9]/"
-install: false
+install: true
 script: return 0
 before_deploy: "./build.sh"
 deploy:
