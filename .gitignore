@@ -22,3 +22,8 @@ _testmain.go
 *.exe
 *.test
 *.prof
+http-healthcheck
+entrypoint/http-healthcheck
+go-http-healthcheck
+entrypoint/go-http-healthcheck
+dist

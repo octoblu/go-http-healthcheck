@@ -1,0 +1,22 @@
+language: go
+go: '1.8'
+branches:
+  only:
+    - "/^v[0-9]/"
+install: false
+script: return 0
+before_deploy: "./build.sh"
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: KWY/f1k65a1RA80Ff66Y/huNYxxuV34WDZNxmDp8RZetATzr1+QM9iW/ypKp/oswjVBuJTAWpe6qMWpeVFtD3ZC076BPst6+09om6vX7dcZjy6zGr8sGaocvQZ3k6wFSTOrts6BUXC8udZoedU2qcgXwZ+3NQjllad4TuNx6ZViJuhJaxhDTV2zJtS2gd4YMTslUaI7fAg93d70XsdLt0QSjEW5G0ZlOWB3nto7wJrVlhSCCZ+ZKJKrgB4QIRpO1sXXn2FkHo6qZmyFJ5MsHMRI2PUWXlbzY/KwYVCjrU9E/dSfle0agXrIrsvBR8b9+gI15eb5aH5SANjidIQKc0h4un1sJGBVOl/4j4ep3XOQ9x5atM5lq6n9K4PNPBOB4lU8OeOsSAgDqG/02jkatglSYpDRnID0A7IzeSH3ml3BbyCLB5sYqh1X7agEV4wJXykP9cCLlSnnsZzjHUlGIu/+WD8HomfsfmCX+TsaS+qvdWiGSwjr0EHDlL5VhtnWSpQ/JHcRg6hplBdloWfW80KDNSqXJPoQ+UiBw6uO0ObV4PdfHK5oPWXwe42u5oeb7tPEb7fr/Hxh9Jax8+n0wLjuAAIBDjzJfsKBTUuRFDjdt+YFXwAu2x7/NcIu/dA6ChBJJS05726FjBC40bZiOmtkB3Jb2DFdP0TfQHA6iAzQ=
+  file: 
+    - dist/http-healthcheck-darwin-386
+    - dist/http-healthcheck-darwin-amd64
+    - dist/http-healthcheck-linux-386
+    - dist/http-healthcheck-linux-amd64
+    - dist/http-healthcheck-windows-386.exe
+    - dist/http-healthcheck-windows-amd64.exe
+  on:
+    repo: octoblu/go-http-healthcheck
