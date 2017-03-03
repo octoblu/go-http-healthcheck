@@ -20,3 +20,4 @@ deploy:
     - dist/http-healthcheck-windows-amd64.exe
   on:
     repo: octoblu/go-http-healthcheck
+    tags: true
